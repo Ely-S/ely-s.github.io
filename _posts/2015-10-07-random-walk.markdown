@@ -5,7 +5,8 @@ date:   2015-10-07 13:02:22
 categories: stats econometrics
 ---
 
-I came across this excellent article on using NIST tests designed for random number generators to investigate the random-walk hypothesis in the stock market. http://www.turingfinance.com/hacking-the-random-walk-hypothesis
+I came across [this excellent article](http://www.turingfinance.com/hacking-the-random-walk-hypothesis
+) on using NIST tests designed for random number generators to investigate the random-walk hypothesis in the stock market. 
 
 It got me thinking about other ways to approach this and I remembered a test from Econometrics.
 
@@ -39,6 +40,6 @@ The variance diverges to infinite with time. When the stochastic process is non-
 
 References
 
-Dicky Fuller https://www.jstor.org/stable/2286348?&seq=1
+Dicky Fuller [https://www.jstor.org/stable/2286348?&seq=1](https://www.jstor.org/stable/2286348?&seq=1)
 
-Granger http://wolfweb.unr.edu/~zal/STAT758/Granger_Newbold_1974.pdf
+Granger [http://wolfweb.unr.edu/~zal/STAT758/Granger_Newbold_1974.pdf](http://wolfweb.unr.edu/~zal/STAT758/Granger_Newbold_1974.pdf)
