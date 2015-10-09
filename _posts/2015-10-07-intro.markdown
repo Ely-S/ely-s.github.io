@@ -1,7 +1,8 @@
 ---
 title: Introductions
 description:  Beginnings, Chapter 1, Genesis, The Grand Opening, Introducing...
-created: !!timestamp '2013-12-21 10:00:00'
+layout: post
+categories: meta me blog
 ---
 
 Dear Reader,
