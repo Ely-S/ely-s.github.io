@@ -142,4 +142,4 @@ a.sidebar-nav-item:hover,a.sidebar-nav-item:focus{text-decoration:underline;}
 .theme-base-0f .content a,.theme-base-0f .related-posts li a:hover{color:#8f5536;}
 .content .post-title a{color:#313131;}
 .sidebar p{text-shadow:1px 1px black;}
-@media (max-width:48em){.sidevar{background-color:#42678C;} .sidebar h1{text-decoration:underline;font-style:italic;}}
+@media (max-width:48em){.sidebar{background-color:#42678C;} .sidebar h1{text-decoration:underline;font-style:italic;}}
