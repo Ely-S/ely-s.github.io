@@ -7,8 +7,4 @@ categories: meta me blog
 
 Dear Reader,
 
-This is my blog where I'll write about what interests me: Economics, Society, Data, and Technology. Writing a blog is something I've wanted to do for a while, and my friends told me to go for it. You can subscribe to my [RSS Feed Here](/blog/atom.xml). I hope I can be insightful at best, and not very entertaining at worst. *Stay with me.*
-
-P.S.
-
-I know what you're going to say, how could *anyone* juxtapose Comic Sans and Baskerville on the same page?? I don't care. It makes me happy.
+This is my blog where I'll write about what interests me: Economics, Society, Data, and Technology. Writing a blog is something I've wanted to do for a while, and my friends told me to go for it. You can subscribe to my [Feed Here](/atom.xml). I hope I can be insightful at best, and not very entertaining at worst. *Stay with me.*
