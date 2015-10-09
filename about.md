@@ -3,7 +3,7 @@ layout: page
 title: About Me
 ---
 
-*I'm an NYC-based data scientsist working on a [startup](invisibleanalytics.org) I cofounded in April, 2015.*
+*I'm an NYC-based data scientist working on a [startup](https://invisibleanalytics.org/) I cofounded in April, 2015.*
 
 I graduated with an Economics degree from RPI when I was 18, and have been programming since I was 13. I love coding for fun and contributing when I think I can help a project. Follow me on [GitHub](https://github.com/Ely-S)!
 
