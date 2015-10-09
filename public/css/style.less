@@ -1,4 +1,17 @@
+@collapsewidth: 48em;
+
 @import "fonts";
 @import "poole";
 @import "syntax";
 @import "hyde";
+
+.sidebar p {
+	text-shadow: 1px 1px black;	
+}
+
+@media (max-width: @collapsewidth) {
+	.sidebar h1 {
+		text-decoration: underline;
+		font-style: italic;
+	}
+}
