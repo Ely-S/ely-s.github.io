@@ -1,0 +1,177 @@
+---
+title: What I like about bacon.js
+description:  An introduction to Bacon
+layout: post
+categories: meta me blog
+---
+
+
+
+## Turn Event Listeners Into Event Streams
+
+This common pattern
+
+	$("#clickme").on('click', function(event){ alert(event.target)})
+
+becomes
+
+	var clicked = $("#btn").asEventStream('click');
+	clicked.onValue(function(event){ alert(event.target) });
+
+
+you can give asEventStream the same arguments as jQuery.on
+
+	$("div").asEventStream("click", ".specific-selector",function(e){})
+
+
+## Promises
+
+You can also create a stream by wrapping a promise object.
+
+	Bacon.fromPromise($.ajax({ url : "/sup.json"})) ;
+
+or an event
+
+	Bacon.fromEvent(document.body, "click");
+
+
+# State with properties
+
+Bacon provides an abstraction for the common pattern in which you want to keep a value in sync with something else updating asynchronously. It provides this by allowing streams to become Properties, which are like streams but take the last value passed *as the current value.*
+
+	stream.toProperty()
+
+You can give .toPoperty a starting value until data gets sent down the stream.
+
+	stream.toProperty(1)
+
+This will contain the default value of true until it changes, then keep the the latest value.
+
+	var checked = $("#checkbox").asEventStream('click')
+					.map(function(e){ return e.target.value })
+					.toProperty(true);
+
+
+## Observables
+
+EventStreams and Properties are both "Observables" and share some methods that also return observables for chaining.
+
+* .subscribe - Attaches a handler and returns an unsubscribe function. 
+* .onValue - assigns a function to be called for each new value and returns an unsubscribe. These are good for adding side-effects. The difference between onValue and subscribe is that subscribe handlers get events while onValue gets the value of the stream.
+* .onValues is like the above, but if the value is an array it passes the it as function arguments
+* .toPromise - takes a promise constructor if given followign the ESS6 implementation. The promise is resolved with the last event from the observable
+* .firstToPromise - returns a promise with the first event from the observable
+* .onError
+* .onEnd
+
+
+This is really cool because of the power this abstraction affords. You can now manipulate events as they travel through your code using all those functional tools you love. 
+
+	$("#input1").asEventStream("keyup")
+	.map(function(event) { return $(event.target).val() })
+
+
+You may be familiar with group, flatMap, join, reduce, combine, transform, skip, filter, take, merge, first, transform.
+
+See [http://www.cheatography.com/proloser/cheat-sheets/bacon-js/](http://www.cheatography.com/proloser/cheat-sheets/bacon-js/) for a complete list with descriptions.		
+
+## Defining your own event sources
+
+You can define your sources using Bacon.fromBinder. It takes a function that gets passed a function to send events and returns a function that is called to unsubscribe from the event stream.
+
+	var event = Bacon.Next("This is a way to create a Bacon event");
+
+	var myStream = Bacon.fromBinder(function(send){
+		send(1); // can send values
+		send(event); // can take an event object
+		send(Bacon.Error("fail")); // or an error
+		send(new Bacon.End()); // returning Bacon.End indicates the stream is over
+	});
+
+
+	  var rsvps = Bacon.fromBinder(function(sink) {
+	    must.Rsvps(sink);
+	    return $.noop;
+	  });
+	
+
+
+## Repeat
+
+Repeat is an interesting on for asynchronous patterms.
+
+From the docs
+
+
+> Bacon.repeat(fn) Calls generator function which is expected to return an observable. The returned EventStream contains values and errors from the spawned observable. When the spawned observable ends, the generator is called again to spawn a new observable.
+>
+> This is repeated until the generator returns a falsy value (such as 	undefined or false).
+
+We can use this for a long-polling application where we want to keep a local mirror of a remote resource
+
+	var ajaxParams = { url: "/resource.json", timeout: 1000000 }
+
+	var localResource = Bacon.repeat(function(){
+		return Bacon.fromPromise($.ajax(ajaxParams)));
+	}).toProperty();
+
+# Warning: Lazy Evaluation
+
+LE is a good thing because it can minimize the amount of computation necessary, but it can lead to traps. Remember that functions are not evaluated when they're called like in _ , they are evaluated when necessary, so try to not use mutable variables from another scope.
+
+## Function construction
+
+Bacon has some jazz that saves you from always having to create functions manual for certain tasks. 
+
+At least onValue, onError, onEnd, doAction, map, filter, assign, takeWhile, mapError support function construction.
+
+You can pass a handler an object and a method name.
+
+	Bacon.fromPromise($.get('/name.txt'))
+		.toProperty("loading")
+		.onValue($("#name"), 'text');
+
+That's equivalent to
+
+	Bacon.fromPromise($.get('/name.txt'))
+		.toProperty("loading")
+		.onValue(function(val){
+			$("#name").text(val);
+		})
+
+Or
+
+	var name = $('#name');
+	Bacon.fromPromise($.get('/name.txt'))
+		.toProperty("loading")
+		.onValue(name.text.bind(name))
+
+You can also access attributes decoratively.
+
+	stream.map('.box.1')
+	// is the same as
+	stream.map(function(val){val.box[1]});
+	// you can map things to constants
+
+## currying
+
+When setting a handler, the remaining arguments gets passed to the function.
+
+	stream.map(function(text, value){ return text+value; }, "hello");
+
+
+# Buses
+
+These are special EventStreams with a push method that adds events to the stream. They can also be composed with other EventStreams.
+
+	var bus = Bacon.Bus(); // creates bus
+	bus.push(1); // add value to stram
+	bus.end() // ends the stream
+	bus.error(error) // sends an error to all subscribers
+	bus.plug(stream) // funnels an event stream into the bus
+
+## Merging
+
+Lastly, event streams can me merged. This is really useful.
+
+	bus.merge(eventStream)
