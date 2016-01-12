@@ -7,9 +7,9 @@ categories: meta me blog
 
 **These are notes from [a class](http://www.meetup.com/Dans-Linux-JavaScript-Class/) I taught on [bacon.js](https://baconjs.github.io/index.html)**
 
-##  Event Listeners Into Event Streams
+##  Event Listeners become Event Streams
 
-This common pattern
+Wrap your events in bacon! This common pattern
 
 	$("#clickme").on('click', function(event){ alert(event.target)})
 
@@ -35,9 +35,9 @@ or an event
 	Bacon.fromEvent(document.body, "click");
 
 
-# State with properties
+## Properties
 
-Bacon provides an abstraction for the common pattern in which you want to keep a value in sync with something else updating asynchronously. It provides this by allowing streams to become Properties, which are like streams but take the last value passed *as the current value.*
+Bacon provides an abstraction for the common pattern in which you want to update a value asynchronously. It does this by allowing streams to become Properties, which are like streams *but take the last value passed as the current value.*
 
 	stream.toProperty()
 
@@ -95,7 +95,7 @@ You can define your sources using Bacon.fromBinder. It takes a function that get
 
 ## Repeat
 
-Repeat is an interesting on for asynchronous patterms.
+Repeat is interesting for asynchronous patterns.
 
 From the docs
 
@@ -104,7 +104,7 @@ From the docs
 >
 > This is repeated until the generator returns a falsy value (such as 	undefined or false).
 
-We can use this for a long-polling application where we want to keep a local mirror of a remote resource
+We can use this for a long-polling application where we want to keep a local mirror of a remote resource.
 
 	var ajaxParams = { url: "/resource.json", timeout: 1000000 }
 
@@ -112,13 +112,13 @@ We can use this for a long-polling application where we want to keep a local mir
 		return Bacon.fromPromise($.ajax(ajaxParams)));
 	}).toProperty();
 
-# Warning: Lazy Evaluation
+## Warning: Lazy Evaluation
 
-LE is a good thing because it can minimize the amount of computation necessary, but it can lead to traps. Remember that functions are not evaluated when they're called like in _ , they are evaluated when necessary, so try to not use mutable variables from another scope.
+LE is a good thing because it can minimize the amount of iteration necessary, but it can lead to traps. Remember that functions are not evaluated when they're called like in _ , they are evaluated when necessary, so try to not use mutable variables from another scope in a closure.
 
 ## Function construction
 
-Bacon has some jazz that saves you from always having to create functions manual for certain tasks. 
+Bacon has some jazz that saves you from always having to create functions manually for certain tasks. 
 
 At least onValue, onError, onEnd, doAction, map, filter, assign, takeWhile, mapError support function construction.
 
@@ -143,7 +143,7 @@ Or
 		.toProperty("loading")
 		.onValue(name.text.bind(name))
 
-You can also access attributes decoratively.
+You can also access attributes declarativly.
 
 	stream.map('.box.1')
 	// is the same as
@@ -157,7 +157,7 @@ When setting a handler, the remaining arguments gets passed to the function.
 	stream.map(function(text, value){ return text+value; }, "hello");
 
 
-# Buses
+## Buses
 
 These are special EventStreams with a push method that adds events to the stream. They can also be composed with other EventStreams.
 
