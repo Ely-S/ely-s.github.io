@@ -5,9 +5,9 @@ layout: post
 categories: meta me blog
 ---
 
+**These are notes from [a class](http://www.meetup.com/Dans-Linux-JavaScript-Class/) I taught on [bacon.js](https://baconjs.github.io/index.html)**
 
-
-## Turn Event Listeners Into Event Streams
+##  Event Listeners Into Event Streams
 
 This common pattern
 
@@ -26,7 +26,7 @@ you can give asEventStream the same arguments as jQuery.on
 
 ## Promises
 
-You can also create a stream by wrapping a promise object.
+Bacon can also create a stream by wrapping a promise object.
 
 	Bacon.fromPromise($.ajax({ url : "/sup.json"})) ;
 
@@ -61,9 +61,6 @@ EventStreams and Properties are both "Observables" and share some methods that a
 * .onValues is like the above, but if the value is an array it passes the it as function arguments
 * .toPromise - takes a promise constructor if given followign the ESS6 implementation. The promise is resolved with the last event from the observable
 * .firstToPromise - returns a promise with the first event from the observable
-* .onError
-* .onEnd
-
 
 This is really cool because of the power this abstraction affords. You can now manipulate events as they travel through your code using all those functional tools you love. 
 
@@ -153,7 +150,7 @@ You can also access attributes decoratively.
 	stream.map(function(val){val.box[1]});
 	// you can map things to constants
 
-## currying
+## Currying
 
 When setting a handler, the remaining arguments gets passed to the function.
 
