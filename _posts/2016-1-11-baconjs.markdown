@@ -48,8 +48,8 @@ You can give .toPoperty a starting value until data gets sent down the stream.
 This will contain the default value of true until it changes, then keep the the latest value.
 
 	var checked = $("#checkbox").asEventStream('click')
-					.map(function(e){ return e.target.value })
-					.toProperty(true);
+				.map(function(e){ return e.target.value })
+				.toProperty(true);
 
 
 ## Observables
