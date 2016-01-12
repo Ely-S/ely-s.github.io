@@ -7,11 +7,7 @@ tags:
 listable: true
 ---
 
-
-## Turn Event Listeners Into Event Streams
-
-{% mark excerpt -%}
-This common pattern
+In Bacon, this common pattern
 
 	$("#clickme").on('click', function(event){ alert(event.target)})
 
@@ -19,8 +15,6 @@ becomes
 
 	var clicked = $("#btn").asEventStream('click');
 	clicked.onValue(function(event){ alert(event.target) });
-
-{%- endmark %}
 
 you can give asEventStream the same arguments as jQuery.on
 
