@@ -1,5 +1,5 @@
 ---
-title: What I like about bacon.js
+title: What I Like About Bacon.js
 description:  An introduction to Bacon
 layout: post
 categories: meta me blog
@@ -19,7 +19,7 @@ becomes
 	clicked.onValue(function(event){ alert(event.target) });
 
 
-you can give asEventStream the same arguments as jQuery.on
+You can give asEventStream the same arguments as jQuery.on.
 
 	$("div").asEventStream("click", ".specific-selector",function(e){})
 
