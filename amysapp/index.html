@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Voluntary Participation</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css"  media="screen,projection"/>
+  </head>
+
+  <body>
+    <header>
+      <img src="img/logo.png" class="logo" alt="MEDCOMPANY">
+    </header>
+
+    <main class="card content">
+      <h1>Voluntary Participation</h1>
+      <p>Participation in this study is voluntary. If you do not wish to participate, there will be no penalty of any kind.</p>
+      <p>To confirm your intent to enroll in this study, please complete this form below.</p>
+
+      <form id="userForm">
+        <div class="row">
+          <div class="input-field col s7">
+            <input placeholder="John" id="first_name" type="text" name="first_name" class="validate" required>
+            <label class="active" for="first_name">First Name</label>
+          </div>
+          <div class="input-field col s7 offset-s1">
+            <input placeholder="Doe" id="last_name" type="text" name="last_name" class="validate" required>
+            <label class="active" for="last_name">Last Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s15">
+            <input placeholder="City Name" id="city" type="text" name="city" class="validate" required>
+            <label class="active" for="city">What city were you born in?</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s15">
+            <input type="checkbox" class="filled-in" id="filled-in-box" required/>
+            <label for="filled-in-box">I consent to participate in this study</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s2">
+            <a href="#back" class="btn-large"><</a>
+          </div>
+          <div class="input-field col s13">
+            <input class="disabled" id="submit" type="submit" 
+            value="Complete the form to continue enrollment">
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <div class="row">
+        <a href="mailto:contact@example.com" class="contact col s2">Contact Us</a>
+        <div class="col offset-s12 s1">
+          <img src="img/icon.png" class="corner-icon" alt="tree">
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="js/form.js"></script>
+  </body>
+</html>
