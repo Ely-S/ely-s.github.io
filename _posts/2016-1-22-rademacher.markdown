@@ -1,8 +1,14 @@
-# Rademacher Complexities.
+
+---
+title: Rademacher Complexity
+description:  An approach to estimate overfitting
+layout: post
+categories: ML
+---
 
 I was sitting with a bunch of grad students in a [data analytics class](http://tw.rpi.edu/web/Courses/DataAnalytics/2015) joking about R package names and ML terminology: e1071, partykit, confusion matrix, artifical nueral network, Perceptron, Belief Nets, Maximum a Posteriori. Take them of context and pretend you don't know what they mean. (If you don't, you're probably a lot saner), and you'll realize *these words sound really cool*. My vote for coolest name goes to Random Forest, but Confusion Matrix sounds awesome too. My grad friends and I decided to started nominating these for band names and song titles.
 
- > Perceptron comes out with it's latest album, **Random Forest**, featuring its hit single *Tangled in the Neural Net*
+ > Perceptron comes out with it's latest album, Random Forest, featuring its hit single *Tangled in the Neural Net*
 
 Thus, I'm writing about Rademacher Complexity because of the cool title. Also, to further the liberation of machine learning knowledge from graduate textbooks.
 
@@ -32,7 +38,9 @@ There are some other approaches you could take to estimate $E_{out}$. If you did
 
 You can also compute a similar estimate by [permuting the labels of the training data](http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf). It works for regression as well as classification, and has a tighter bound because it takes the original output labels into account. It's called the permutation estimate and has an associated bound called the Permutation Bound [3].
 
-> Confusion Matrix, new music video *Probably Approximately Correct* goes viral
+
+> Confusion Matrix's, new music video *Probably Approximately Correct* goes viral.
+
 
 1. Abu-Mostafa, Magdon-Ismail, Lin: Nov-2014, Page 30, e-chapter 9, Learning From Data.
 2. Peter L. Bartlett, Shahar Mendelson (2002) Rademacher and Gaussian Complexities: Risk Bounds and Structural Results. Journal of Machine Learning Research 3 463-482
