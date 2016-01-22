@@ -33,10 +33,10 @@ Rademacher Complexity is a good tool for model selection and controlling over-fi
 
 * If you did the same thing using normally distributed variables, it's called the Gaussian Complexity [2].
 
-* You can compute a similar estimate by [permuting the labels of the training data](http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf). It works for regression as well as classification. It's called the permutation estimate and has an associated bound called the Permutation Bound [3].
+* You can compute a similar estimate by [permuting the labels of the training data](http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf). It works for regression as well as classification. It's called the Permutation Estimate and has an associated bound called the Permutation Bound [3].
 
 > Confusion Matrix, new music video *Probably Approximately Correct* goes viral
 
-[1] Abu-Mostafa, Magdon-Ismail, Lin: Nov-2014, Page 30, e-chapter 9, Learning From Data.
-[2] Peter L. Bartlett, Shahar Mendelson (2002) Rademacher and Gaussian Complexities: Risk Bounds and Structural Results. Journal of Machine Learning Research 3 463-482
-[3] Magdon-Ismail, Permutation Complexity Bound on Out-Sample Error, http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf
+1. Abu-Mostafa, Magdon-Ismail, Lin: Nov-2014, Page 30, e-chapter 9, Learning From Data.
+2. Peter L. Bartlett, Shahar Mendelson (2002) Rademacher and Gaussian Complexities: Risk Bounds and Structural Results. Journal of Machine Learning Research 3 463-482
+3. Magdon-Ismail, Permutation Complexity Bound on Out-Sample Error, http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf
