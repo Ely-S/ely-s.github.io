@@ -1,12 +1,12 @@
 # Rademacher Complexities.
 
-I was sitting with a bunch of grad students in a data analytics class joking about R package names and ml terminology: e1071, partykit, confusion matrix, artifical nueral network, Perceptron, Belief Nets, Maximum a Posteriori. Take them of context and pretend you don't know what they mean (If you don't you're probably saner), and you'll realize *these words sound really cool*. My vote for coolest name goes to Random Forest, but Confusion Matrix sounds awesome too. Those graduate students and I decided to started nominating these for band names.
+I was sitting with a bunch of grad students in a [data analytics class](http://tw.rpi.edu/web/Courses/DataAnalytics/2015) joking about R package names and ML terminology: e1071, partykit, confusion matrix, artifical nueral network, Perceptron, Belief Nets, Maximum a Posteriori. Take them of context and pretend you don't know what they mean. (If you don't, you're probably a lot saner), and you'll realize *these words sound really cool*. My vote for coolest name goes to Random Forest, but Confusion Matrix sounds awesome too. My grad friends and I decided to started nominating these for band names and song titles.
 
  > Perceptron comes out with it's latest album, **Random Forest**, featuring its hit single *Tangled in the Neural Net*
 
-Thus, I'm writing about Rademacher Complexity because of the cool title. (Also, to further the liberation of machine learning knowledge from graduate textbooks).
+Thus, I'm writing about Rademacher Complexity because of the cool title. Also, to further the liberation of machine learning knowledge from graduate textbooks.
 
-RC solves the problem of estimating over-fitting. We can think about our out of sample error as. In a PAC learning scenario, where we pick an Empirical Risk Minimizer $g$, our out of sample error can be thought of as how well we fit our training set with a penalty on how much we overfit.
+RC solves the problem of estimating over-fitting. In a PAC learning scenario, where we pick an Empirical Risk Minimizer $g$, our out of sample error can be thought of as how well we fit our training set with a penalty on how much we overfit.
 
 [1] $$E_{out}(g) = E_{in}(g) + overfitpenalty$$
 
@@ -28,14 +28,12 @@ $$C\sqrt{\frac{d}{n}} $$
 
 Rademacher Complexity is a good tool for model selection and controlling over-fitting in classification scenarios. It's great because it directly estimates $E_{out}$ without a test set.
 
-There are some other approaches you could take to estimate $E_{out}$. 
+There are some other approaches you could take to estimate $E_{out}$. If you did the same thing using normally distributed variables, it's called the Gaussian Complexity.
 
-[2] If you did the same thing using normally distributed variables, it's called the Gaussian Complexity.
-
-You can compute a similar estimate by [permuting the labels of the training data](http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf). It works for regression as well as classification. It's called the permutation estimate and has an associated bound called the Permutation Bound [3].
+You can also compute a similar estimate by [permuting the labels of the training data](http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf). It works for regression as well as classification, and has a tighter bound because it takes the original output labels into account. It's called the permutation estimate and has an associated bound called the Permutation Bound [3].
 
 > Confusion Matrix, new music video *Probably Approximately Correct* goes viral
 
-[1] Abu-Mostafa, Magdon-Ismail, Lin: Nov-2014, Page 30, e-chapter 9, Learning From Data.
-[2] Peter L. Bartlett, Shahar Mendelson (2002) Rademacher and Gaussian Complexities: Risk Bounds and Structural Results. Journal of Machine Learning Research 3 463-482
-[3] Magdon-Ismail, [Permutation Complexity Bound on Out-Sample Error](http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf), http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf
+1. Abu-Mostafa, Magdon-Ismail, Lin: Nov-2014, Page 30, e-chapter 9, Learning From Data.
+2. Peter L. Bartlett, Shahar Mendelson (2002) Rademacher and Gaussian Complexities: Risk Bounds and Structural Results. Journal of Machine Learning Research 3 463-482
+3. Magdon-Ismail, [Permutation Complexity Bound on Out-Sample Error](http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf), http://www.cs.rpi.edu/~magdon/ps/conference/PermCompNIPS2010.pdf
