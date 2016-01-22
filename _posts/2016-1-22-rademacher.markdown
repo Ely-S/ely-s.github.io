@@ -1,10 +1,10 @@
-
 ---
 title: Rademacher Complexity
 description:  An approach to estimate overfitting
 layout: post
 categories: ML
 ---
+
 
 I was sitting with a bunch of grad students in a [data analytics class](http://tw.rpi.edu/web/Courses/DataAnalytics/2015) joking about R package names and ML terminology: e1071, partykit, confusion matrix, artifical nueral network, Perceptron, Belief Nets, Maximum a Posteriori. Take them of context and pretend you don't know what they mean. (If you don't, you're probably a lot saner), and you'll realize *these words sound really cool*. My vote for coolest name goes to Random Forest, but Confusion Matrix sounds awesome too. My grad friends and I decided to started nominating these for band names and song titles.
 
