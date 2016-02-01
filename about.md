@@ -3,7 +3,7 @@ layout: page
 title: About Me
 ---
 
-*I'm an SF Bay Area-based data scientist*
+*I'm an SF Bay Area-based data scientist.*
 
 I have been programming since I was 13. I love coding for fun and contributing when I think I can help a project. Follow me on [GitHub](https://github.com/Ely-S)!
 
