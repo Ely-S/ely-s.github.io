@@ -7,7 +7,7 @@ title: About Me
 
 I have been programming since I was 13. I love coding for fun and contributing when I think I can help a project. Follow me on [GitHub](https://github.com/Ely-S)!
 
-I like data science because it's *even more* interesting to me than programming. It's programming + real-world problems + statistics. The ridiculously complicated challanges, and the sophisticated solutions, of statistical inference fascinate me. Occasionally I'll write about econometrics, the statistical and intellectual toolkit economists use to solid inferences about complex systems.
+I like data science because it's *even more* interesting to me than programming. It's programming + real-world problems + statistics. The ridiculously complicated challanges, and the sophisticated solutions, of statistical inference fascinate me. Occasionally I'll write about econometrics, the statistical and intellectual toolkit economists use to make inferences about complex systems.
 
 # This Site
 
