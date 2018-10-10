@@ -4,10 +4,10 @@ highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
-relative_permalinks: true
+relative_permalinks: false
 
 # Setup
-title:            Data Tactics
+title:            Data + Code
 tagline:          'A data blog'
 description:      'An ML and programming blog'
 url:              https://eli.cool/
@@ -25,3 +25,4 @@ version:          2.1.0
 github:			https://github.com/Ely-S
 connect:		https://www.linkedin.com/pub/eli-sakov/88/556/b65
 email: 			eli.sakov@createthenext.com
+resume: 		/resume.html
