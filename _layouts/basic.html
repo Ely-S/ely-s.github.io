@@ -14,10 +14,14 @@
 	<style type="text/css">
 		@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato&display=swap');
 
-		iframe {
+		
+		.iframe-container {
+		    height: 550px;
+		    overflow: hidden;
 		    box-shadow: 0px 0px 11px 0px white;
 		    border-radius: 10px;
 		}
+		
 		.name {
 		    font-family: Comfortaa;
 		    margin: 0 auto;
@@ -281,7 +285,9 @@
 	</header>
 
   <div class="content container">
-    {{ content }}
+    <div class="iframe-container">
+      {{ content }}
+    </div>
   </div>
 
   </body>
